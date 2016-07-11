@@ -1,4 +1,4 @@
-package destiny_test
+package bagua_test
 
 import (
 	"testing"

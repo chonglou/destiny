@@ -1,10 +1,10 @@
-package destiny_test
+package cal_test
 
 import (
 	"testing"
 	"time"
 
-	"github.com/chonglou/destiny"
+	"github.com/chonglou/destiny/cal"
 	"github.com/chonglou/destiny/dizhi"
 	"github.com/chonglou/destiny/tiangan"
 )
@@ -12,7 +12,7 @@ import (
 func TestCalendar(t *testing.T) {
 	loc, _ := time.LoadLocation("Asia/Shanghai")
 	now := time.Date(2016, 7, 22, 1, 0, 0, 0, loc)
-	cal := destiny.Calendar{T: now}
+	cal := cal.Calendar{T: now}
 	if tg, dz, err := cal.Day(); err == nil {
 		t.Logf("日干支： %s%s", tg, dz)
 		if tg != tiangan.Yi && dz != dizhi.Wei {
