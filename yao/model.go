@@ -1,6 +1,6 @@
-package yinyang
+package yao
 
-//Type 阴阳
+//Type 爻
 type Type string
 
 const (

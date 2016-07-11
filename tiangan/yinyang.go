@@ -1,35 +1,29 @@
-package dizhi
+package tiangan
 
-import (
-	"github.com/chonglou/destiny/yao"
-)
+import "github.com/chonglou/destiny/yao"
 
 //YinYang 阴阳
 func (p Type) YinYang() yao.Type {
 	switch p {
-	case Zi:
+	case Jia:
 		return yao.Yang
-	case Chou:
+	case Yi:
 		return yao.Yin
-	case Yin:
+	case Bing:
 		return yao.Yang
-	case Mao:
-		return yao.Yin
-	case Chen:
-		return yao.Yang
-	case Si:
+	case Ding:
 		return yao.Yin
 	case Wu:
 		return yao.Yang
-	case Wei:
+	case Ji:
 		return yao.Yin
-	case Shen:
+	case Geng:
 		return yao.Yang
-	case You:
+	case Xin:
 		return yao.Yin
-	case Xu:
+	case Ren:
 		return yao.Yang
-	case Hai:
+	case Gui:
 		return yao.Yin
 	default:
 		return ""
