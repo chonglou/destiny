@@ -1,34 +1,17 @@
 package wuxing
 
 //Type 五行
-type Type uint
+type Type string
 
 const (
-	_ Type = iota
 	//Jin 金
-	Jin Type = iota
+	Jin Type = "金"
 	//Mu 木
-	Mu Type = iota
+	Mu Type = "木"
 	//Shui 水
-	Shui Type = iota
+	Shui Type = "水"
 	//Huo 火
-	Huo Type = iota
+	Huo Type = "火"
 	//Tu 土
-	Tu Type = iota
+	Tu Type = "土"
 )
-
-func (p Type) String() string {
-	switch p {
-	case Jin:
-		return "金"
-	case Mu:
-		return "木"
-	case Shui:
-		return "水"
-	case Huo:
-		return "火"
-	case Tu:
-		return "土"
-	}
-	return ""
-}

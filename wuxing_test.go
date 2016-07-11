@@ -1,12 +1,6 @@
 package destiny_test
 
-import (
-	"testing"
-
-	"github.com/chonglou/destiny/wuxing"
-)
+import "testing"
 
 func TestWuXing(t *testing.T) {
-	tu := wuxing.Tu
-	t.Logf("%d %s", tu, tu)
 }

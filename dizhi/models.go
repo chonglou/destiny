@@ -1,62 +1,31 @@
 package dizhi
 
 //Type 地支
-type Type uint
+type Type string
 
 const (
-	_ Type = iota
 	//Zi 子
-	Zi Type = iota
+	Zi Type = "子"
 	//Chou 丑
-	Chou Type = iota
+	Chou Type = "丑"
 	//Yin 寅
-	Yin Type = iota
+	Yin Type = "寅"
 	//Mao 卯
-	Mao Type = iota
+	Mao Type = "卯"
 	//Chen 辰
-	Chen Type = iota
+	Chen Type = "辰"
 	//Si 巳
-	Si Type = iota
+	Si Type = "巳"
 	//Wu 午
-	Wu Type = iota
+	Wu Type = "午"
 	//Wei 未
-	Wei Type = iota
+	Wei Type = "未"
 	//Shen 申
-	Shen Type = iota
+	Shen Type = "申"
 	//You 酉
-	You Type = iota
+	You Type = "酉"
 	//Xu 戌
-	Xu Type = iota
+	Xu Type = "戌"
 	//Hai 亥
-	Hai Type = iota
+	Hai Type = "亥"
 )
-
-func (p Type) String() string {
-	switch p {
-	case Zi:
-		return "子"
-	case Chou:
-		return "丑"
-	case Yin:
-		return "寅"
-	case Mao:
-		return "卯"
-	case Chen:
-		return "辰"
-	case Si:
-		return "巳"
-	case Wu:
-		return "午"
-	case Wei:
-		return "未"
-	case Shen:
-		return "申"
-	case You:
-		return "酉"
-	case Xu:
-		return "戌"
-	case Hai:
-		return "亥"
-	}
-	return ""
-}

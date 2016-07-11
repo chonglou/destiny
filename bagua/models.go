@@ -1,41 +1,23 @@
 package bagua
 
 //Type 八卦
-type Type uint
+type Type string
 
 const (
-	_ = iota
-	//Qian
-	Qian = iota
-	Dui  = iota
-	Li   = iota
-	Zhen = iota
-	Xun  = iota
-	Kan  = iota
-	Gen  = iota
-	Kun  = iota
+	//Qian 乾
+	Qian Type = "乾"
+	//Dui 兑
+	Dui Type = "兑"
+	//Li 离
+	Li Type = "离"
+	//Zhen 震
+	Zhen Type = "震"
+	//Xun 巽
+	Xun Type = "巽"
+	//Kan 坎
+	Kan Type = "坎"
+	//Gen 艮
+	Gen Type = "艮"
+	//Kun 坤
+	Kun Type = "坤"
 )
-
-func (p Type) String() string {
-	switch p {
-	case Qian:
-		return "乾"
-	case Dui:
-		return "兌"
-	case Li:
-		return "離"
-	case Zhen:
-		return "震"
-	case Xun:
-		return "巽"
-	case Kan:
-		return "坎"
-	case Gen:
-		return "艮"
-	case Kun:
-		return "坤"
-	default:
-		return ""
-
-	}
-}

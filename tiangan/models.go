@@ -1,54 +1,27 @@
 package tiangan
 
 //Type 天干
-type Type uint
+type Type string
 
 const (
-	_ Type = iota
 	//Jia 甲
-	Jia Type = iota
+	Jia Type = "甲"
 	//Yi 乙
-	Yi Type = iota
+	Yi Type = "乙"
 	//Bing 丙
-	Bing Type = iota
+	Bing Type = "丙"
 	//Ding 丁
-	Ding Type = iota
+	Ding Type = "丁"
 	//Wu 戊
-	Wu Type = iota
+	Wu Type = "戊"
 	//Ji 己
-	Ji Type = iota
+	Ji Type = "己"
 	//Geng 庚
-	Geng Type = iota
+	Geng Type = "庚"
 	//Xin 辛
-	Xin Type = iota
+	Xin Type = "辛"
 	//Ren 壬
-	Ren Type = iota
+	Ren Type = "壬"
 	//Gui 癸
-	Gui Type = iota
+	Gui Type = "癸"
 )
-
-func (p Type) String() string {
-	switch p {
-	case Jia:
-		return "甲"
-	case Yi:
-		return "乙"
-	case Bing:
-		return "丙"
-	case Ding:
-		return "丁"
-	case Wu:
-		return "戊"
-	case Ji:
-		return "己"
-	case Geng:
-		return "庚"
-	case Xin:
-		return "辛"
-	case Ren:
-		return "壬"
-	case Gui:
-		return "癸"
-	}
-	return ""
-}
