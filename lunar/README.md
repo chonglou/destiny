@@ -48,3 +48,5 @@
 - [用天文方法计算二十四节气（上）](http://blog.csdn.net/orbit/article/details/7910220)
 - [用天文方法计算二十四节气（下）](http://blog.csdn.net/orbit/article/details/7944248)
 - [用天文方法计算日月合朔（新月）](http://blog.csdn.net/orbit/article/details/8223751)
+- [1900年至2100年公历、农历互转Js代码](http://blog.jjonline.cn/userInterFace/173.html)
+- [公曆與農曆日期對照表(文字版本)](http://data.weather.gov.hk/gts/time/conversion1_text_c.htm)

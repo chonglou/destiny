@@ -1,0 +1,12 @@
+hash: db07dd7f63425ad97df4124dd49782fc4ca0d89042870c4352ab94c7ef3a0ee8
+updated: 2016-07-22T12:12:44.10099091-07:00
+imports:
+- name: golang.org/x/text
+  version: 0a5a09ee4409a616bfa03115120f0bffacdff508
+  subpackages:
+  - encoding/traditionalchinese
+  - transform
+  - encoding
+  - encoding/internal
+  - encoding/internal/identifier
+testImports: []
