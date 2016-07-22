@@ -5,7 +5,6 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"path"
 
 	"golang.org/x/text/encoding/traditionalchinese"
 	"golang.org/x/text/transform"
@@ -18,13 +17,8 @@ type Crawler struct {
 
 //Fetch 获得日历数据
 func (p *Crawler) Fetch() error {
-	const dir = "tmp"
-	if err := os.MkdirAll(dir, 0700); err != nil {
-		return err
-	}
-
-	for y := 1901; y <= 2100; y++ {
-		fn := path.Join(dir, fmt.Sprintf("%d.txt", y))
+	for y := BEGIN; y <= END; y++ {
+		fn := filename(y)
 		e := p.get(y, fn)
 		if e != nil {
 			return e

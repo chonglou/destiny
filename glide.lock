@@ -1,6 +1,12 @@
-hash: db07dd7f63425ad97df4124dd49782fc4ca0d89042870c4352ab94c7ef3a0ee8
-updated: 2016-07-22T12:12:44.10099091-07:00
+hash: 65122706a3656f97dae965eb61f421212e987494637043945340f591be1c4d83
+updated: 2016-07-22T13:39:36.14480193-07:00
 imports:
+- name: github.com/jinzhu/gorm
+  version: a646b13548ec0aa812fe805b2780f460dd2771b6
+  subpackages:
+  - dialects/postgres
+- name: github.com/jinzhu/inflection
+  version: 8f4d3a0d04ce0b7c0cf3126fb98524246d00d102
 - name: golang.org/x/text
   version: 0a5a09ee4409a616bfa03115120f0bffacdff508
   subpackages:
@@ -9,4 +15,6 @@ imports:
   - encoding
   - encoding/internal
   - encoding/internal/identifier
-testImports: []
+testImports:
+- name: github.com/lib/pq
+  version: 4dd446efc17690bc53e154025146f73203b18309

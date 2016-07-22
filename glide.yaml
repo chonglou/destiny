@@ -1,6 +1,11 @@
 package: github.com/chonglou/destiny
 import:
+- package: github.com/jinzhu/gorm
+  subpackages:
+  - dialects/postgres
 - package: golang.org/x/text
   subpackages:
   - encoding/traditionalchinese
   - transform
+testImport:
+- package: github.com/lib/pq
