@@ -180,10 +180,66 @@ func (p *Crawler) current(day string, last *Date) error {
 		case "閏十一月":
 			last.LMonth = 11
 		default:
-			return fmt.Errorf("ingnore day %s", day)
+			return fmt.Errorf("unknown day %s", day)
 		}
 	}
 	return nil
+}
+
+func (p *Crawler) term(t string) (int, error) {
+	switch t {
+	case "立春":
+		return 1, nil
+	case "雨水":
+		return 2, nil
+	case "驚蟄":
+		return 3, nil
+	case "春分":
+		return 4, nil
+	case "清明":
+		return 5, nil
+	case "穀雨":
+		return 6, nil
+	case "立夏":
+		return 7, nil
+	case "小滿":
+		return 8, nil
+	case "芒種":
+		return 9, nil
+	case "夏至":
+		return 10, nil
+	case "小暑":
+		return 11, nil
+	case "大暑":
+		return 12, nil
+	case "立秋":
+		return 13, nil
+	case "處暑":
+		return 14, nil
+	case "白露":
+		return 15, nil
+	case "秋分":
+		return 16, nil
+	case "寒露":
+		return 17, nil
+	case "霜降":
+		return 18, nil
+	case "立冬":
+		return 19, nil
+	case "小雪":
+		return 20, nil
+	case "大雪":
+		return 21, nil
+	case "冬至":
+		return 22, nil
+	case "小寒":
+		return 23, nil
+	case "大寒":
+		return 24, nil
+	default:
+		return 0, fmt.Errorf("unknown term %s", t)
+
+	}
 }
 
 func (p *Crawler) read(year int, last *Date, query Query) error {
@@ -214,6 +270,9 @@ func (p *Crawler) read(year int, last *Date, query Query) error {
 			if err = p.current(rst[3], last); err != nil {
 				return err
 			}
+			// if dt.Term, err = strconv.Atoi(rst[4]); err != nil {
+			// 	return err
+			// }
 			dt.Term = rst[4]
 
 			dt.LYear = last.LYear

@@ -13,13 +13,16 @@ func TestCrawler(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	//db.LogMode(true)
+	db.LogMode(false)
 
 	var qu lunar.Query
 	qu = &lunar.GormQuery{Db: db}
 
 	var c lunar.Crawler
 	e := c.Fetch()
+	if e == nil {
+		e = qu.Prepare()
+	}
 	if e == nil {
 		e = c.Store(qu)
 	}

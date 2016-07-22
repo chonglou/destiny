@@ -24,15 +24,16 @@ func filename(year int) string {
 type Date struct {
 	ID uint `gorm:"primary_key"`
 
-	SYear  int `gorm:"not null"`
-	SMonth int `gorm:"not null"`
-	SDay   int `gorm:"not null"`
-	LYear  int `gorm:"not null"`
-	LMonth int `gorm:"not null"`
-	LDay   int `gorm:"not null"`
+	SYear  int `gorm:"type:smallint;not null"`
+	SMonth int `gorm:"type:smallint;not null"`
+	SDay   int `gorm:"type:smallint;not null"`
+	LYear  int `gorm:"type:smallint;not null"`
+	LMonth int `gorm:"type:smallint;not null"`
+	LDay   int `gorm:"type:smallint;not null"`
 
-	Term string `gorm:"type:varchar(16);index"`
-	Leap bool   `gorm:"not null"`
+	Term string `gorm:"type:varchar(12);index"`
+	//Term int  `gorm:"not null"`
+	Leap bool `gorm:"not null"`
 
 	CreatedAt time.Time
 }
