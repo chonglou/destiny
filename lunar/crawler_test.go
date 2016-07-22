@@ -7,12 +7,9 @@ import (
 )
 
 func TestCrawler(t *testing.T) {
-	c := lunar.Crawler{}
-	for i := 1901; i <= 2100; i++ {
-		if e := c.Fetch(i); e == nil {
-			t.Logf("get data of year %d", i)
-		} else {
-			t.Fatal(e)
-		}
+	var c lunar.Crawler
+	if e := c.Fetch(); e != nil {
+		t.Fatal(e)
 	}
+
 }
