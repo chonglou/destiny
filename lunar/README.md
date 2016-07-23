@@ -2,4 +2,7 @@
 
 使用查表法，数据来源(香港天文台)[<http://data.weather.gov.hk/contentc.htm>]
 
-## [例子](crawler_test.go)
+## [例子]
+
+- [gorm_query_test](sql_query_test.go)
+- [sql_query_test](sql_query_test.go)

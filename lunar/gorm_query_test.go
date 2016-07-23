@@ -14,5 +14,5 @@ func TestGormQuery(t *testing.T) {
 		t.Fatal(err)
 	}
 	db.LogMode(false)
-	testCrawler(t, &lunar.GormQuery{Db: db})
+	testQuery(t, &lunar.GormQuery{Db: db})
 }

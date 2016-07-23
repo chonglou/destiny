@@ -24,3 +24,22 @@ func (p *GormQuery) Prepare() error {
 func (p *GormQuery) Write(item *Date) error {
 	return p.Db.Create(item).Error
 }
+
+//FromSolar 从公历查询
+func (p *GormQuery) FromSolar(y, m, d int) (Date, error) {
+	var item Date
+	err := p.Db.
+		Where("s_year = ? AND s_month = ? AND s_day = ?", y, m, d).
+		First(&item).Error
+	return item, err
+}
+
+//FromLunar 从农历查询
+func (p *GormQuery) FromLunar(y, m, d int) ([]Date, error) {
+	var items []Date
+	err := p.Db.
+		Where("l_year = ? AND l_month = ? AND l_day = ?", y, m, d).
+		Order("ID ASC").
+		Find(&items).Error
+	return items, err
+}

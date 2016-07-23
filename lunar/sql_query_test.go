@@ -14,5 +14,5 @@ func TestPgSqlQuery(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	testCrawler(t, &lunar.PgSQLQuery{Db: db})
+	testQuery(t, &lunar.PgSQLQuery{Db: db})
 }

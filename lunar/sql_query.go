@@ -55,3 +55,55 @@ func (p *PgSQLQuery) Write(item *Date) error {
 	)
 	return err
 }
+
+//FromSolar 从公历查询
+func (p *PgSQLQuery) FromSolar(y, m, d int) (Date, error) {
+	var item Date
+	err := p.Db.
+		QueryRow(
+			"SELECT id, s_year, s_month, s_day, l_year, l_month, l_day, leap, term FROM lunar_items WHERE s_year = $1 AND s_month = $2 AND s_day = $3 LIMIT 1",
+			y, m, d,
+		).
+		Scan(
+			&item.ID,
+			&item.SYear,
+			&item.SMonth,
+			&item.SDay,
+			&item.LYear,
+			&item.LMonth,
+			&item.LDay,
+			&item.Leap,
+			&item.Term,
+		)
+
+	return item, err
+}
+
+//FromLunar 从农历查询
+func (p *PgSQLQuery) FromLunar(y, m, d int) ([]Date, error) {
+	var items []Date
+	rows, err := p.Db.Query(
+		"SELECT id, s_year, s_month, s_day, l_year, l_month, l_day, leap, term FROM lunar_items WHERE l_year = $1 AND l_month = $2 AND l_day = $3 ORDER BY ID ASC",
+		y, m, d,
+	)
+	defer rows.Close()
+	for rows.Next() {
+		var item Date
+		if err = rows.Scan(
+			&item.ID,
+			&item.SYear,
+			&item.SMonth,
+			&item.SDay,
+			&item.LYear,
+			&item.LMonth,
+			&item.LDay,
+			&item.Leap,
+			&item.Term,
+		); err != nil {
+			break
+		}
+		items = append(items, item)
+	}
+
+	return items, err
+}
