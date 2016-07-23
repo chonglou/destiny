@@ -9,3 +9,4 @@ import:
   - transform
 testImport:
 - package: github.com/lib/pq
+- package: github.com/go-sql-driver/mysql

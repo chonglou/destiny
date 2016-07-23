@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path"
 	"regexp"
 	"strconv"
 	"strings"
@@ -38,13 +39,19 @@ func (p *Crawler) Store(q Query) error {
 //Fetch 获得日历数据
 func (p *Crawler) Fetch() error {
 	for y := BEGIN; y <= END; y++ {
-		fn := filename(y)
+		fn := p.filename(y)
 		e := p.get(y, fn)
 		if e != nil {
 			return e
 		}
 	}
 	return nil
+}
+
+func (p *Crawler) filename(year int) string {
+	dir := path.Join(os.TempDir(), "lunar")
+	os.MkdirAll(dir, 0700)
+	return path.Join(dir, fmt.Sprintf("%d.txt", year))
 }
 
 func (p *Crawler) get(year int, file string) error {
@@ -243,7 +250,7 @@ func (p *Crawler) term(t string) (int, error) {
 }
 
 func (p *Crawler) read(year int, last *Date, query Query) error {
-	fd, err := os.Open(filename(year))
+	fd, err := os.Open(p.filename(year))
 	if err != nil {
 		return err
 	}

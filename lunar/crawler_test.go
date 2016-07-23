@@ -4,27 +4,17 @@ import (
 	"testing"
 
 	"github.com/chonglou/destiny/lunar"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-func TestCrawler(t *testing.T) {
-	db, err := gorm.Open("postgres", "user=postgres dbname=lunar_test sslmode=disable")
-	if err != nil {
-		t.Fatal(err)
-	}
-	db.LogMode(false)
-
-	var qu lunar.Query
-	qu = &lunar.GormQuery{Db: db}
+func testCrawler(t *testing.T, q lunar.Query) {
 
 	var c lunar.Crawler
 	e := c.Fetch()
 	if e == nil {
-		e = qu.Prepare()
+		e = q.Prepare()
 	}
 	if e == nil {
-		e = c.Store(qu)
+		e = c.Store(q)
 	}
 	if e != nil {
 		t.Fatal(e)

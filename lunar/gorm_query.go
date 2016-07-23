@@ -2,7 +2,7 @@ package lunar
 
 import "github.com/jinzhu/gorm"
 
-//GormQuery 查询工具类
+//GormQuery query by gorm
 type GormQuery struct {
 	Db *gorm.DB
 }
@@ -15,8 +15,8 @@ func (p *GormQuery) Clear() error {
 //Prepare create table and indexes
 func (p *GormQuery) Prepare() error {
 	p.Db.AutoMigrate(&Date{})
-	p.Db.Model(&Date{}).AddUniqueIndex("idx_lunar_dates_s", "s_year", "s_month", "s_day")
-	p.Db.Model(&Date{}).AddUniqueIndex("idx_lunar_dates_l", "l_year", "l_month", "l_day", "leap")
+	p.Db.Model(&Date{}).AddUniqueIndex("idx_lunar_items_s", "s_year", "s_month", "s_day")
+	p.Db.Model(&Date{}).AddUniqueIndex("idx_lunar_items_l", "l_year", "l_month", "l_day", "leap")
 	return nil
 }
 

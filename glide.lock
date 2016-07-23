@@ -1,5 +1,5 @@
-hash: 65122706a3656f97dae965eb61f421212e987494637043945340f591be1c4d83
-updated: 2016-07-22T13:39:36.14480193-07:00
+hash: df93975d9f27be06181aa64adee0efc389c7297256bf737214a3b6a55b38bf46
+updated: 2016-07-22T17:08:59.750729942-07:00
 imports:
 - name: github.com/jinzhu/gorm
   version: a646b13548ec0aa812fe805b2780f460dd2771b6
@@ -16,5 +16,7 @@ imports:
   - encoding/internal
   - encoding/internal/identifier
 testImports:
+- name: github.com/go-sql-driver/mysql
+  version: 3654d25ec346ee8ce71a68431025458d52a38ac0
 - name: github.com/lib/pq
   version: 4dd446efc17690bc53e154025146f73203b18309
